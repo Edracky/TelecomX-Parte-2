@@ -75,7 +75,7 @@ Este repositório conduz uma jornada completa — desde a exploração de dados 
 
 ## ✍️ Autoria
 
-Desenvolvido por **Andre Mateus Passos**  
+Desenvolvido por  **: Andre Mateus Passos**  
 
 🎮 Tecnólogo em Jogos Digitais  
 🗄️ Administrador de Banco de Dados  
