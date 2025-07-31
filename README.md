@@ -1,80 +1,89 @@
-## 📡 Detecção Inteligente de Evasão de Clientes em Telecom
+## 📡 Diagnóstico Preditivo de Evasão de Clientes em Telecom
 
-> **“Não basta prever a saída. É preciso decifrar por que o cliente pensa em ir embora.”**
+> **"Prever o churn é só o começo: o desafio é entender o porquê, agir a tempo e fidelizar.”**
 
 ## 🚀 Sobre o Projeto
 
-Este repositório traz uma jornada completa: desde a exploração de dados, construção e comparação de modelos preditivos até a extração de insights práticos para retenção de clientes em uma operadora fictícia de telecomunicações. O grande diferencial? Usamos ciência de dados não só para prever o futuro — mas para fundamentar decisões estratégicas de verdade.
+Este repositório conduz uma jornada completa — desde a exploração de dados à implementação e comparação de modelos preditivos — com o objetivo de combater a evasão de clientes em uma operadora de telecom. O enfoque não está apenas em identificar quem vai sair, mas em produzir aprendizados e soluções práticas para retenção.
 
 ## 🎯 Objetivos
 
-- **Mapear padrões de evasão** analisando todo o perfil do cliente
-- **Utilizar Machine Learning** para prever quem está prestes a sair
-- **Comparar modelos com e sem normalização** e técnicas de balanceamento (SMOTE)
-- **Identificar variáveis-chave** que influenciam o churn
-- **Traduzir resultados em recomendações objetivas** para reter clientes
+- Detectar padrões e fatores determinantes para o churn.
+- Construir modelos de Machine Learning robustos para previsão da evasão.
+- Testar e comparar métodos de normalização, balanceamento (SMOTE) e diferentes algoritmos.
+- Apresentar métricas claras para orientar ações na área de retenção.
+- Traduzir resultados em recomendações práticas.
 
-## 🧰 Tecnologias & Ferramentas
+## 🧰 Tecnologias e Ferramentas
 
 - Python 3.x
 - pandas, numpy, matplotlib, seaborn
-- scikit-learn, imbalanced-learn
+- scikit-learn, imbalanced-learn, xgboost
 - Jupyter Notebook
 
-## 🏆 Abordagens Testadas
+## 🏆 Modelos Construídos
 
-### 1. **Regressão Logística + SMOTE**
-- Ideal para interpretar o papel de cada variável
-- Requer normalização (StandardScaler)
-- Destaque: **Encargos Mensais, Encargos Totais, Tempo de Serviço** ganham força como motores de churn
+- **Regressão Logística + SMOTE**
+    - Requer normalização dos dados.
+    - Traz interpretabilidade dos coeficientes e clareza nos fatores de risco.
+    - Métricas: recall e F1-score superiores, ideal para flagrar clientes em risco.
 
-### 2. **Random Forest + SMOTE**
-- Capta relações não-lineares e interações complexas
-- Não exige normalização
-- Principais influenciadores: **Tempo de Serviço, Encargos Totais, Tipo de Contrato**
+- **Random Forest + SMOTE**
+    - Não precisa de normalização.
+    - Captura relações e dependências não-lineares entre as variáveis.
+    - Maior precisão geral, fácil adaptação para dados mistos.
 
-## 🔍 Principais Descobertas
+- **XGBoost + SMOTE**
+    - Boosting eficiente e indicado para tabelas com muitos atributos.
+    - Ótimo gerenciamento de outliers e variáveis colineares.
+    - Reforça variáveis críticas para o churn, apesar de neste conjunto não superar Logística em recall/F1.
 
-- 💸 **Custo importa (muito):** planos caros e cobranças altas aceleram a evasão.
-- 📅 **Contratos curtos** (mensais) sinalizam risco; contratos longos (bienais) são protetores.
-- 🤝 **Engajamento e vínculo:** clientes antigos, com dependentes ou parceiros, permanecem mais tempo.
-- 📡 **Infraestrutura pesa:** ter fibra óptica é importante, mas expectativas e custos precisam ser geridos.
-- 🔑 **Qualidade e suporte:** atributos como segurança online e atendimento técnico retêm clientes.
+## 📊 Resultados do Comparativo
 
-## 📊 Resultados e Métricas
+| Métrica     | Logística | Random Forest | XGBoost |
+|-------------|-----------|--------------|---------|
+| Acurácia    | 0.7611    | 0.7616       | 0.7588  |
+| Precisão    | 0.5287    | 0.5337       | 0.5294  |
+| Recall      | 0.6578    | 0.5793       | 0.5615  |
+| F1-score    | 0.5862    | 0.5556       | 0.5450  |
 
-| Modelo                    | Acurácia | Precisão | Recall  | F1-score |
-|---------------------------|:--------:|:--------:|:-------:|:--------:|
-| Regressão Logística (SMOTE) | 0.761 | 0.529   | 0.658   | 0.586    |
-| Random Forest (SMOTE)     | 0.765    | 0.538    | 0.626   | 0.578    |
+- **Regressão Logística** destacou-se no recall e F1-score: identifica mais clientes em risco real de saída.
+- **Random Forest/XGBoost** têm desempenho geral semelhante, com ligeira vantagem em precisão.
+- Todos os modelos, por meio do SMOTE, respeitaram o equilíbrio das classes durante o treino.
 
-- Reg. Logística: melhor para identificar desperdícios (maior recall)
-- Random Forest: mais equilibrada, ligeiro ganho em acurácia e precisão global
+## 🔎 Insights Principais
 
-## 💡 O que fazer com esses insights?
+- 💸 **Planos e cobranças elevadas** aceleram a evasão.
+- 📅 **Contratos mensais** representam risco; contratos longos protegem.
+- 🤝 **Clientes antigos, com dependentes ou parceiros** mostram maior permanência.
+- 📡 **Qualidade percebida** em fibra óptica importa; necessidade de alinhar expectativa e entrega.
+- 🔑 **Atendimento e suporte técnico** diferenciam o churn do engajamento.
 
-1. **Ajustar planos, taxas e benefícios** conforme o perfil e tempo de casa do cliente.
-2. **Investir em comunicação personalizada e relacionamento** — não só descontos.
-3. **Atuar rápido nos primeiros sinais de insatisfação** (exemplo: contato proativo para clientes novos).
-4. **Valorizar os laços familiares** (programas “indique um amigo” e benefícios para dependentes).
-5. **Monitorar a experiência do cliente** constantemente, com NPS, SAC e dados de uso.
+## 💡 Recomendações Aplicáveis
 
-## 🐾 Próximos Passos
+1. Ofereça planos e benefícios personalizados de acordo com o ciclo de vida do cliente.
+2. Aposte em comunicação proativa e canais de ESCUTA (NPS, SAC, acompanhamento digital).
+3. Crie programas para amarrar laços familiares e premiar fidelidade.
+4. Monitore sinais precoces de insatisfação e aja nos primeiros meses.
+5. Invista em qualidade de infraestrutura e disponibilidade de suporte.
 
-- Testar modelos de última geração (e.g., XGBoost, LightGBM)
-- Explorar dados temporais e dinâmicas de jornada do cliente
-- Criar dashboards dinâmicos para acompanhamento em tempo real
+## 🏁 Próximos Passos
+
+- Testar ajustes finos em hiperparâmetros e modelos de última geração (LightGBM, CatBoost).
+- Explorar variáveis temporais, de engajamento e comportamento de navegação.
+- Desenvolver dashboards interativos para uso de equipes de negócio.
 
 ## ✍️ Autoria
 
 Desenvolvido por **Andre Mateus Passos**  
 
 🎮 Tecnólogo em Jogos Digitais  
-🗄️ Administrador(a) de Banco de Dados  
+🗄️ Administrador de Banco de Dados  
 📊 Entusiasta de Ciência de Dados
 
+> “Clientes querem se sentir únicos. Ciência de dados é a ponte entre tecnologia e experiência personalizada.”
 
-> “Mais do que segurar clientes, queremos criar experiências que façam cada um deles querer ficar.”
+🔗 **Veja o projeto completo:**  
+[https://github.com/Edracky/TelecomX-Parte-2](https://github.com/Edracky/TelecomX-Parte-2)
 
 
- https://github.com/Edracky/TelecomX-Parte-2
