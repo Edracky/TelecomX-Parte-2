@@ -1,4 +1,4 @@
-# 📡 Detecção Inteligente de Evasão de Clientes em Telecom
+## 📡 Detecção Inteligente de Evasão de Clientes em Telecom
 
 > **“Não basta prever a saída. É preciso decifrar por que o cliente pensa em ir embora.”**
 
@@ -65,13 +65,16 @@ Este repositório traz uma jornada completa: desde a exploração de dados, cons
 - Explorar dados temporais e dinâmicas de jornada do cliente
 - Criar dashboards dinâmicos para acompanhamento em tempo real
 
-## ✍️ Autoria & Contato
+## ✍️ Autoria
 
-Desenvolvido por **Carolini Rufino**  
-Data Science Enthusiast | Secretária | Bacharel em Administração
+Desenvolvido por **Andre Mateus Passos**  
+
+🎮 Tecnólogo em Jogos Digitais  
+🗄️ Administrador(a) de Banco de Dados  
+📊 Entusiasta de Ciência de Dados
+
 
 > “Mais do que segurar clientes, queremos criar experiências que façam cada um deles querer ficar.”
 
-Se quiser, personalize com sua identidade visual, inclua logo, badges do GitHub ou links para notebooks!
 
-[1] 
+ https://github.com/Edracky/TelecomX-Parte-2
