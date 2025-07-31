@@ -1,5 +1,3 @@
-Aqui está uma proposta de README alternativa, moderna e visual, para o seu projeto de análise de churn em telecom — com organização estilizada, chamadas diretas e linguagem amistosa, mas profissional. Sinta-se à vontade para adaptar!
-
 # 📡 Detecção Inteligente de Evasão de Clientes em Telecom
 
 > **“Não basta prever a saída. É preciso decifrar por que o cliente pensa em ir embora.”**
